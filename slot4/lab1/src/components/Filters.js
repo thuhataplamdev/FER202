@@ -1,7 +1,7 @@
 import { Row, Col, Form } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-export default function Filters({ onFilterChange, showItemsPerPage=false, perPage=6, onPerPageChange }) {
+export default function Filters({ onFilterChange, showItemsPerPage=false, perPage=4, onPerPageChange }) {
   const [maxPrep, setMaxPrep] = useState("");
   const [maxCook, setMaxCook] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
@@ -62,7 +62,8 @@ export default function Filters({ onFilterChange, showItemsPerPage=false, perPag
         <Col xs={12} className="mt-2">
           <div className="d-flex align-items-center gap-2">
             <span className="text-muted">Items per page:</span>
-            <Form.Select style={{maxWidth: 120}} value={perPage} onChange={e=>onPerPageChange?.(Number(e.target.value))}>
+            <Form.Select style={{maxWidth: 70}} value={perPage} onChange={e=>onPerPageChange?.(Number(e.target.value))}>
+              <option value={4}>4</option>
               <option value={6}>6</option>
               <option value={9}>9</option>
               <option value={12}>12</option>

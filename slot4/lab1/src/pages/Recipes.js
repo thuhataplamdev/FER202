@@ -20,7 +20,7 @@ function sortRecipes(list, sortBy) {
 export default function Recipes({ onAddFav, favs }) {
   const [filters, setFilters] = useState({ maxPrep:"", maxCook:"", searchTerm:"", sortBy:"" });
   const [page, setPage] = useState(1);
-  const [perPage, setPerPage] = useState(6);
+  const [perPage, setPerPage] = useState(4); // Default items per page, can be changed via Filters
 
   const handleFilterChange = useCallback((payload) => { setFilters(payload); setPage(1); }, []);
 
@@ -53,7 +53,7 @@ export default function Recipes({ onAddFav, favs }) {
   return (
     <>
       <Carousel className="mb-4 rounded-xl shadow-soft">
-        {recipesData.slice(0, 3).map((r, i) => (
+        {recipesData.slice(0, 5).map((r, i) => (
           <Carousel.Item key={i}>
             <img className="d-block w-100" src={r.image} alt={r.title} style={{maxHeight: 360, objectFit: "cover"}} />
             <Carousel.Caption className="bg-dark bg-opacity-50 rounded-pill px-3">

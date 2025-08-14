@@ -1,0 +1,18 @@
+/* src/index.css hoặc src/App.css */
+.student-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.student-card img {
+  height: 300px;           /* cố định chiều cao ảnh */
+  object-fit: cover;       /* cắt ảnh vừa khung mà không méo */
+}
+
+.student-card .card-body {
+  flex: 1;                 /* đẩy phần body chiếm đều chiều cao còn lại */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
