@@ -9,13 +9,12 @@ const SubmitForm = ({ title, onSubmit }) => {
         email: "",
         phone: "",
         gender: "",
-        agree: true,
+        agree: false,
     });
 
-    const [errors, setErrors] = useState({});
-    const [showAlert, setShowAlert] = useState(false);
+    const [errors, setErrors] = useState({}); //state lưu lỗi
+    const [showAlert, setShowAlert] = useState(false);  
 
-    // Xử lý thay đổi giá trị input
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData({
@@ -24,18 +23,14 @@ const SubmitForm = ({ title, onSubmit }) => {
         });
     };
 
-    // Validate dữ liệu
     const validateForm = () => {
         const newErrors = {};
-
-        // Validate tên
         if (!formData.name.trim()) {
             newErrors.name = "Tên không được để trống!";
         } else if (formData.name.length < 3 || formData.name.length > 50) {
             newErrors.name = "Tên phải từ 3 đến 50 ký tự!";
         }
 
-        // Validate tuổi
         const ageNum = parseInt(formData.age, 10);
         if (!formData.age) {
             newErrors.age = "Tuổi không được để trống!";
@@ -43,7 +38,6 @@ const SubmitForm = ({ title, onSubmit }) => {
             newErrors.age = "Tuổi phải nằm trong khoảng từ 18 đến 100!";
         }
 
-        // Validate email
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!formData.email.trim()) {
             newErrors.email = "Email không được để trống!";
@@ -51,17 +45,14 @@ const SubmitForm = ({ title, onSubmit }) => {
             newErrors.email = "Email không hợp lệ!";
         }
 
-        // Validate số điện thoại
         const phoneRegex = /^[0-9]{10,15}$/;
         if (!formData.phone.trim()) {
             newErrors.phone = "Số điện thoại không được để trống!";
         } else if (!phoneRegex.test(formData.phone)) {
             newErrors.phone = "Số điện thoại phải từ 10–15 chữ số!";
         }
-        // Validate giới tính
         if (!formData.gender) newErrors.gender = "Vui lòng chọn giới tính!";
 
-        // Validate điều khoản
         if (!formData.agree) {
             newErrors.agree = "Bạn phải đồng ý với điều khoản!";
         }
