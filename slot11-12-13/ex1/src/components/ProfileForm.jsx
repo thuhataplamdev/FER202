@@ -20,7 +20,6 @@ function ProfileForm({ onSubmit, initialValues }) {
   const [showToast, setShowToast] = React.useState(false);
   const [showModal, setShowModal] = React.useState(false);
 
-  // Validate từng trường
   const validate = React.useCallback(
     (v) => {
       const errs = {};
@@ -44,11 +43,9 @@ function ProfileForm({ onSubmit, initialValues }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // đánh dấu đã chạm để hiển thị lỗi nếu có
     setTouched({ name: true, email: true, age: true });
     if (!isValid) return;
 
-    // gọi callback và hiển thị toast + modal
     onSubmit?.({ name: name.trim(), email: email.trim(), age: Number(age) });
     setShowToast(true);
     setShowModal(true);
