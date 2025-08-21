@@ -5,7 +5,7 @@ import AboutForm from "./AboutForm";
 import AccountForm from "./AccountForm";
 import AddressForm from "./AddressForm";
 
-const initialState = {
+const initialState = { // initial state for the profile wizard
   about: { fullName: "", email: "", age: "", avatar: null, avatarUrl: "" },
   account: { username: "", password: "", confirm: "", question: "", answer: "", showPwd: false },
   address: { streetName: "", streetNumber: "", city: "", country: "Viet Nam" },

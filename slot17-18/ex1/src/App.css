@@ -1,0 +1,206 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* .dishes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dish-item {
+  border: 1px solid #ccc;
+  padding: 16px;
+  width: 200px;
+  text-align: center;
+}
+
+.dish-item img {
+  width: 100%;
+  height: auto;
+}
+
+.dish-item button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.dish-item button:hover {
+  background-color: #45a049;
+} */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;                 /* 🔹 tạo khoảng cách giữa các item */
+}
+
+.nav a {
+  text-decoration: none;     /* bỏ gạch chân */
+  color: var(--fg);
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.nav a:hover {
+  background: rgba(127,127,127,0.08);
+}
+
+.nav .ghost {
+  margin-left: 8px;          /* tách nút với link cuối */
+}
+
+:root, body {
+  --bg: #ffffff;
+  --fg: #222;
+  --muted: #666;
+  --border: #ddd;
+  --primary: #4caf50;
+  --primary-hover: #45a049;
+  --danger: #c0392b;
+  --card: #fff;
+  --shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+/* Dark override – kích hoạt khi body có class "dark" */
+body.dark {
+  --bg: #0f1216;
+  --fg: #e7e9ee;
+  --muted: #a8b0bd;
+  --border: #2a2f38;
+  --primary: #7bdc86;
+  --primary-hover: #6acc76;
+  --danger: #ff6b6b;
+  --card: #151a21;
+  --shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* ===== Base layout ===== */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; margin: 0; }
+.App { min-height: 100%; background: var(--bg); color: var(--fg); }
+
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; border-bottom: 1px solid var(--border);
+  position: sticky; top: 0; background: var(--bg); z-index: 5;
+}
+.topbar h1 { margin: 0; font-size: 18px; }
+.topbar-actions { display: flex; gap: 12px; align-items: center; }
+
+.search {
+  padding: 8px 10px; border: 1px solid var(--border); border-radius: 8px;
+  background: var(--card); color: var(--fg);
+}
+
+.grid { display: grid; grid-template-columns: 1fr 320px; gap: 20px; padding: 20px; }
+.footer { border-top: 1px solid var(--border); padding: 12px 20px; text-align: center; color: var(--muted); }
+
+/* ===== Dishes ===== */
+.dishes { display: flex; flex-wrap: wrap; gap: 16px; }
+.dish-item {
+  border: 1px solid var(--border); padding: 16px; width: 220px; text-align: left;
+  border-radius: 12px; background: var(--card); box-shadow: var(--shadow);
+}
+.dish-item img {
+  width: 100%; height: 140px; object-fit: cover; border-radius: 10px;
+}
+.dish-item h3 { margin: 10px 0 6px; font-size: 16px; }
+.muted { color: var(--muted); margin: 0 0 6px; min-height: 40px; }
+.price { font-weight: 600; margin: 6px 0 10px; }
+
+/* ===== Buttons ===== */
+button {
+  padding: 8px 12px; background-color: var(--primary); color: #fff;
+  border: none; cursor: pointer; border-radius: 10px;
+}
+button:hover { background-color: var(--primary-hover); }
+button.ghost { background: transparent; color: var(--fg); border: 1px solid var(--border); }
+button.ghost:hover { background: rgba(127,127,127,0.08); }
+.link { background: transparent; color: var(--fg); border: 1px solid var(--border); }
+.link.danger { color: var(--danger); border-color: var(--danger); }
+.link.danger:hover { background: rgba(255,107,107,0.1); }
+.secondary { background: transparent; color: var(--fg); border: 1px solid var(--border); }
+.secondary:hover { background: rgba(127,127,127,0.08); }
+
+/* ===== Cart ===== */
+.empty { border: 1px dashed var(--border); padding: 20px; border-radius: 12px; color: var(--muted); }
+
+.cart {
+  position: sticky; top: 72px; border: 1px solid var(--border);
+  background: var(--card); border-radius: 12px; padding: 16px; box-shadow: var(--shadow);
+}
+.cart-list { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-direction: column; gap: 8px; }
+.cart-item {
+  display: flex; align-items: center; justify-content: space-between;
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; background: transparent;
+}
+.cart-summary p { margin: 6px 0; }
+.cart-actions { display: flex; gap: 10px; margin-top: 10px; }
+
+.app-toast {
+  position: fixed;
+  /* right: 20px;
+  bottom: 20px; */
+  top: 60px;       
+  left: 1020px;  
+  background: var(--card);
+  color: var(--fg);
+  border: 1px solid var(--primary);
+  padding: 12px 16px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  z-index: 99999;          /* cao hơn */
+  font-weight: 600;
+
+  opacity: 0;
+  transform: translateY(8px);
+  animation: toast-in 0.2s ease-out forwards, toast-out 0.2s ease-in 1.8s forwards;
+}
+.app-toast.success { border-color: var(--primary); }
+
+@keyframes toast-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes toast-out {
+  to { opacity: 0; transform: translateY(8px); }
+}
