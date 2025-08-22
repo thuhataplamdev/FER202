@@ -2,21 +2,21 @@ const dishes = [
   {
     id: 1,
     name: "Mediterranean Chickpea Salad",
-    description: "A refreshing, protein-packed salad tossed in a lemon-olive oil dressing.",
+    description: "A refreshing, protein-packed salad tossed.",
     price: "6.99",
     image: "/images/mediterranean-chickpea-salad.jpg"
   },
   {
     id: 2,
-    name: "Avocado & Tomato Wholegrain Toast",
-    description: "Creamy avocado spread over toasted wholegrain bread, topped with juicy tomatoes.",
+    name: "Avocado & Tomato Wholegrain ",
+    description: "Creamy avocado spread over toasted wholegrain bread.",
     price: "4.50",
     image: "/images/avocado-tomato-toast.jpg"
   },
   {
     id: 3,
     name: "One-Pan Lemon Garlic Salmon",
-    description: "A 15-minute weeknight dinner of flaky salmon and tender asparagus.",
+    description: "A 15-minute weeknight dinner of flaky salmon and tender .",
     price: "12.99",
     image: "/images/one-pan-lemon-garlic-salmon.jpg"
   },
@@ -30,14 +30,14 @@ const dishes = [
   {
     id: 5,
     name: "Sweet Potato Black Bean Tacos",
-    description: "Smoky roasted sweet potatoes and black beans tucked into warm tortillas.",
+    description: "Smoky roasted sweet potatoes and black beans .",
     price: "7.25",
     image: "/images/sweet-potato-black-bean-tacos.jpg"
   },
   {
     id: 6,
     name: "Greek Yogurt Berry Parfait",
-    description: "Layers of creamy yogurt, fresh berries and crunchy oats for a high-protein snack.",
+    description: "Layers of creamy yogurt, fresh berries and crunchy oats.",
     price: "3.99",
     image: "/images/greek-yogurt-berry-parfait.jpg"
   },
