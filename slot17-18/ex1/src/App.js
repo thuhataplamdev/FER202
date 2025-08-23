@@ -13,7 +13,6 @@ function App() {
     return saved ? saved === "dark" : false;
   });
 
-  // Gán class "dark" lên body và lưu lựa chọn
   React.useEffect(() => {
     document.body.classList.toggle("dark", dark);
     localStorage.setItem("theme", dark ? "dark" : "light");
@@ -43,7 +42,7 @@ function App() {
             </nav>
           </header>
 
-          {/* CONTENT */}
+          
           <main className="grid">
             <Routes>
               <Route
